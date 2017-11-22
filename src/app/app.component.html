@@ -1,7 +1,12 @@
 <input type="text" id="price" [(ngModel)]="price"/>
 <input type="text" id="qty"  [(ngModel)]="qty"/>
 
-<button id="checkout" (click)="Calculate(price, qty)">Checkout</button>
+<select id="level" [(ngModel)]="level">
+  <option value="VIP">VIP</option>
+  <option value="Normal">Normal</option>
+</select>
+
+<button id="checkout" (click)="Calculate(level, price, qty)">Checkout</button>
 
 <hr />
 

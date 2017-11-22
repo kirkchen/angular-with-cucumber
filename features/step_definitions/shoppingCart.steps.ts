@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { ShoppingCartPage } from '../pages/shoppingCart.page';
 
 defineSupportCode(function ({ Given, Then, When, Before }) {
-  let page;
+  let page: ShoppingCartPage;
   Before(() => {
     page = new ShoppingCartPage();
   });
@@ -18,6 +18,10 @@ defineSupportCode(function ({ Given, Then, When, Before }) {
 
   Given('商品數量為 {string} 件', async function (qty) {
     await page.setProductQty(qty);
+  });
+
+  Given('會員等級為 {string}', async function (level) {
+    await page.setMemberLevel(level);
   });
 
   When('進行結帳',async function () {

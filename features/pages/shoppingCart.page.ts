@@ -15,6 +15,10 @@ export class ShoppingCartPage {
     await element(by.css('input#qty')).sendKeys(qty);
   }
 
+  async setMemberLevel(level:string){
+    await element(by.css(`option[value=${level}]`)).click();
+  }
+
   async clickCheckoutButton(){
     await element(by.css('button#checkout')).click();
   }
